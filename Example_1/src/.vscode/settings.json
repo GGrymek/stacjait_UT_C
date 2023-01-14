@@ -1,0 +1,25 @@
+{
+    "files.associations": {
+        "adcmodel.h": "c",
+        "adcconductor.h": "c",
+        "adctemperaturesensor.h": "c",
+        "temperaturecalculator.h": "c",
+        "adchardwareconfigurator.h": "c",
+        "intrinsicswrapper.h": "c",
+        "taskscheduler.h": "c",
+        "timerconductor.h": "c",
+        "timerconfigurator.h": "c",
+        "usarttransmitbufferstatus.h": "c",
+        "usartputchar.h": "c",
+        "usartmodel.h": "c",
+        "usarthardware.h": "c",
+        "usartconfigurator.h": "c",
+        "usartbaudrateregistercalculator.h": "c",
+        "timermodel.h": "c",
+        "usartconductor.h": "c",
+        "timerinterrupthandler.h": "c",
+        "timerinterruptconfigurator.h": "c",
+        "temperaturefilter.h": "c",
+        "timerhardware.h": "c"
+    }
+}
