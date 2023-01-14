@@ -16,6 +16,24 @@ OBJ_DIR = ${OBJ}
 ./build/test/obj/cmock.o: C:/Users/grzeg/Desktop/Software_tools/cmock/src/cmock.c
 	${CC} -o $@ -c $< -I C:/Users/grzeg/Desktop/Software_tools/cmock/vendor/unity/src -I C:/Users/grzeg/Desktop/Software_tools/cmock/src
 
+./build/test/obj/AdcConductor.o: ./src/AdcConductor.c
+	${CC} -o $@ -c $< ${TEST_CFLAGS} -I ${SRC_DIR} ${INCLUDE_PATH}
+
+./build/test/runners/runner_test_AdcConductor.c: ./test/test_AdcConductor.c
+	@UNITY_DIR=${UNITY_DIR} ruby ${CMOCK_DIR}/scripts/create_runner.rb ./test/test_AdcConductor.c ./build/test/runners/runner_test_AdcConductor.c
+
+./build/test/obj/runner_test_AdcConductor.o: ./build/test/runners/runner_test_AdcConductor.c
+	${CC} -o $@ -c $< ${TEST_CFLAGS} -I ./src -I ./build/test/mocks -I C:/Users/grzeg/Desktop/Software_tools/cmock/vendor/unity/src -I C:/Users/grzeg/Desktop/Software_tools/cmock/src ${INCLUDE_PATH}
+
+./build/test/obj/test_AdcConductor.o: ./test/test_AdcConductor.c ./build/test/obj/AdcConductor.o ./build/test/mocks/mock_AdcModel.o ./build/test/mocks/mock_AdcHardware.o
+	${CC} -o $@ -c $< ${TEST_CFLAGS} -I ./src -I C:/Users/grzeg/Desktop/Software_tools/cmock/vendor/unity/src -I C:/Users/grzeg/Desktop/Software_tools/cmock/src -I ./build/test/mocks ${INCLUDE_PATH}
+
+./build/test/test_AdcConductor: ./build/test/obj/test_AdcConductor.o ./build/test/obj/runner_test_AdcConductor.o ./build/test/obj/AdcConductor.o ./build/test/mocks/mock_AdcModel.o ./build/test/mocks/mock_AdcHardware.o  ./build/test/obj/unity.o ./build/test/obj/cmock.o
+	${CC} -o $@ ${LDFLAGS} ./build/test/obj/test_AdcConductor.o ./build/test/obj/runner_test_AdcConductor.o ./build/test/obj/AdcConductor.o ./build/test/mocks/mock_AdcModel.o ./build/test/mocks/mock_AdcHardware.o  ./build/test/obj/unity.o ./build/test/obj/cmock.o
+
+./build/test/test_AdcConductor.testresult: ./build/test/test_AdcConductor
+	-./build/test/test_AdcConductor > ./build/test/test_AdcConductor.testresult 2>&1
+
 ./build/test/obj/AdcHardware.o: ./src/AdcHardware.c
 	${CC} -o $@ -c $< ${TEST_CFLAGS} -I ${SRC_DIR} ${INCLUDE_PATH}
 
@@ -52,6 +70,18 @@ OBJ_DIR = ${OBJ}
 ./build/test/test_UsartConductor.testresult: ./build/test/test_UsartConductor
 	-./build/test/test_UsartConductor > ./build/test/test_UsartConductor.testresult 2>&1
 
+./build/test/mocks/mock_AdcModel.c: ./src/AdcModel.h
+	@CMOCK_DIR=${CMOCK_DIR} ruby ${CMOCK_DIR}/scripts/create_mock.rb ./src/AdcModel.h
+
+./build/test/mocks/mock_AdcModel.o: ./build/test/mocks/mock_AdcModel.c ./build/test/mocks/mock_AdcModel.h
+	${CC} -o $@ -c $< ${TEST_CFLAGS} -I ./build/test/mocks -I ./src -I C:/Users/grzeg/Desktop/Software_tools/cmock/vendor/unity/src -I C:/Users/grzeg/Desktop/Software_tools/cmock/src ${INCLUDE_PATH}
+
+./build/test/mocks/mock_AdcHardware.c: ./src/AdcHardware.h
+	@CMOCK_DIR=${CMOCK_DIR} ruby ${CMOCK_DIR}/scripts/create_mock.rb ./src/AdcHardware.h
+
+./build/test/mocks/mock_AdcHardware.o: ./build/test/mocks/mock_AdcHardware.c ./build/test/mocks/mock_AdcHardware.h
+	${CC} -o $@ -c $< ${TEST_CFLAGS} -I ./build/test/mocks -I ./src -I C:/Users/grzeg/Desktop/Software_tools/cmock/vendor/unity/src -I C:/Users/grzeg/Desktop/Software_tools/cmock/src ${INCLUDE_PATH}
+
 ./build/test/mocks/mock_AdcHardwareConfigurator.c: ./src/AdcHardwareConfigurator.h
 	@CMOCK_DIR=${CMOCK_DIR} ruby ${CMOCK_DIR}/scripts/create_mock.rb ./src/AdcHardwareConfigurator.h
 
@@ -87,5 +117,5 @@ test_summary:
 
 .PHONY: test_summary
 
-test: ./build/test/test_AdcHardware.testresult ./build/test/test_UsartConductor.testresult test_summary
+test: ./build/test/test_AdcConductor.testresult ./build/test/test_AdcHardware.testresult ./build/test/test_UsartConductor.testresult test_summary
 

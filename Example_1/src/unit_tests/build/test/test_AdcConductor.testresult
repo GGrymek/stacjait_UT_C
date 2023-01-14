@@ -1,0 +1,8 @@
+./test/test_AdcConductor.c:25:test_AdcConductor_Init_CheckIfHardwareInitCalled:PASS
+./test/test_AdcConductor.c:36:test_AdcConductor_Run_NotGetSample:PASS
+./test/test_AdcConductor.c:48:test_AdcConductor_Run_GetSampleDoneNotComplete:PASS
+./test/test_AdcConductor.c:60:test_FunctionName_TestName_4:PASS
+
+-----------------------
+4 Tests 0 Failures 0 Ignored 
+OK

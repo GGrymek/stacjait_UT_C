@@ -25,6 +25,8 @@
         "types.h": "c",
         "at91sam7x256.h": "c",
         "mock_adchardwareconfigurator.h": "c",
-        "mock_adctemperaturesensor.h": "c"
+        "mock_adctemperaturesensor.h": "c",
+        "mock_adchardware.h": "c",
+        "mock_adcmodel.h": "c"
     }
 }
