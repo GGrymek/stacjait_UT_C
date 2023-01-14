@@ -23,6 +23,8 @@
         "timerhardware.h": "c",
         "adchardware.h": "c",
         "types.h": "c",
-        "at91sam7x256.h": "c"
+        "at91sam7x256.h": "c",
+        "mock_adchardwareconfigurator.h": "c",
+        "mock_adctemperaturesensor.h": "c"
     }
 }

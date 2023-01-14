@@ -1,0 +1,8 @@
+./test/test_UsartConductor.c:24:test_FunctionName_TestCaseName_1:PASS
+./test/test_UsartConductor.c:28:test_FunctionName_TestName_2:PASS
+./test/test_UsartConductor.c:32:test_FunctionName_TestName_3:PASS
+./test/test_UsartConductor.c:36:test_FunctionName_TestName_4:PASS
+
+-----------------------
+4 Tests 0 Failures 0 Ignored 
+OK
