@@ -57,7 +57,7 @@ void test_AdcConductor_Run_GetSampleDoneNotComplete(void)
    Returned Values: None
    Description: Default run.
 */
-void test_FunctionName_TestName_4(void)
+void test_FunctionName_TestName_DefaultFunctionRun(void)
 {
     AdcModel_DoGetSample_ExpectAndReturn(TRUE);
     AdcHardware_GetSampleComplete_ExpectAndReturn(TRUE);

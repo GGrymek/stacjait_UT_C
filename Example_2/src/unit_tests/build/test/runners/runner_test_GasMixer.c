@@ -11,7 +11,7 @@
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_FunctionName_TestName_1(void);
+extern void test_GasMixer_UpdateO2Parameters_DefaultFunctionRun(void);
 extern void test_FunctionName_TestName_2(void);
 extern void test_FunctionName_TestName_3(void);
 extern void test_FunctionName_TestName_4(void);
@@ -85,10 +85,10 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 int main(void)
 {
   UnityBegin("./test/test_GasMixer.c");
-  run_test(test_FunctionName_TestName_1, "test_FunctionName_TestName_1", 23);
-  run_test(test_FunctionName_TestName_2, "test_FunctionName_TestName_2", 27);
-  run_test(test_FunctionName_TestName_3, "test_FunctionName_TestName_3", 31);
-  run_test(test_FunctionName_TestName_4, "test_FunctionName_TestName_4", 35);
+  run_test(test_GasMixer_UpdateO2Parameters_DefaultFunctionRun, "test_GasMixer_UpdateO2Parameters_DefaultFunctionRun", 30);
+  run_test(test_FunctionName_TestName_2, "test_FunctionName_TestName_2", 55);
+  run_test(test_FunctionName_TestName_3, "test_FunctionName_TestName_3", 59);
+  run_test(test_FunctionName_TestName_4, "test_FunctionName_TestName_4", 63);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

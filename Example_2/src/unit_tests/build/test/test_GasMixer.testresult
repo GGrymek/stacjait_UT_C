@@ -1,7 +1,7 @@
-./test/test_GasMixer.c:23:test_FunctionName_TestName_1:PASS
-./test/test_GasMixer.c:27:test_FunctionName_TestName_2:PASS
-./test/test_GasMixer.c:31:test_FunctionName_TestName_3:PASS
-./test/test_GasMixer.c:35:test_FunctionName_TestName_4:PASS
+./test/test_GasMixer.c:30:test_GasMixer_UpdateO2Parameters_DefaultFunctionRun:PASS
+./test/test_GasMixer.c:55:test_FunctionName_TestName_2:PASS
+./test/test_GasMixer.c:59:test_FunctionName_TestName_3:PASS
+./test/test_GasMixer.c:63:test_FunctionName_TestName_4:PASS
 
 -----------------------
 4 Tests 0 Failures 0 Ignored 
