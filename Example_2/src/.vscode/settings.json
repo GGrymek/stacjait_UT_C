@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "gasmixer.h": "c",
+        "io2sensor.h": "c",
+        "acmeo2adapter.h": "c",
+        "acmeo2sensorproxy.h": "c",
+        "ultimateo2adapter.h": "c",
+        "stdlib.h": "c",
+        "ultimateo2sensorproxy.h": "c",
+        "gasdisplay.h": "c"
+    }
+}

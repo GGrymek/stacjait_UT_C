@@ -8,6 +8,9 @@
 #include "GasMixer.h"
 
 /* Include all required mock headers */
+#include "mock_iO2Sensor.h"
+#include "mock_AcmeO2Adapter.h"
+#include "mock_UltimateO2Adapter.h"
 
 void setUp(void)
 {
