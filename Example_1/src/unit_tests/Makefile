@@ -6,8 +6,8 @@ export TEST_BUILD_DIR ?= ${BUILD_DIR}/test
 TEST_MAKEFILE = ${TEST_BUILD_DIR}/MakefileTestSupport
 OBJ ?= ${BUILD_DIR}/obj
 OBJ_DIR = ${OBJ}
-HEADERS_PATHS_LIST = ../AdcHardware.h ../Types.h ../AdcHardwareConfigurator.h ../AdcTemperatureSensor.h ../AT91SAM7X256.h
-SOURCES_PATHS_LIST = ../AdcHardware.c
+HEADERS_PATHS_LIST = ../AdcHardware.h ../Types.h ../AdcHardwareConfigurator.h ../AdcTemperatureSensor.h ../AT91SAM7X256.h ../UsartConductor.h ../UsartHardware.h ../UsartModel.h ../TaskScheduler.h
+SOURCES_PATHS_LIST = ../AdcHardware.c ../UsartConductor.c
 
 default: all
 
