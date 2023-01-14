@@ -20,6 +20,9 @@
         "timerinterrupthandler.h": "c",
         "timerinterruptconfigurator.h": "c",
         "temperaturefilter.h": "c",
-        "timerhardware.h": "c"
+        "timerhardware.h": "c",
+        "adchardware.h": "c",
+        "types.h": "c",
+        "at91sam7x256.h": "c"
     }
 }

@@ -6,8 +6,8 @@ export TEST_BUILD_DIR ?= ${BUILD_DIR}/test
 TEST_MAKEFILE = ${TEST_BUILD_DIR}/MakefileTestSupport
 OBJ ?= ${BUILD_DIR}/obj
 OBJ_DIR = ${OBJ}
-HEADERS_PATHS_LIST = <required header files>
-SOURCES_PATHS_LIST = <tested source files>
+HEADERS_PATHS_LIST = ../AdcHardware.h ../Types.h ../AdcHardwareConfigurator.h ../AdcTemperatureSensor.h ../AT91SAM7X256.h
+SOURCES_PATHS_LIST = ../AdcHardware.c
 
 default: all
 
@@ -20,7 +20,7 @@ copy:
 setup:
 	mkdir -p ${BUILD_DIR}
 	mkdir -p ${OBJ}
-	ruby <path to create_makefile.rb> --silent
+	ruby ../../tools/create_makefile.rb --silent
 
 clean:
 	rm -rf ${SRC_DIR}
